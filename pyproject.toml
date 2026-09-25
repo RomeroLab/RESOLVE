@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "resolve-method"
+version = "1.0.0"
+description = "ESM-2 keep/tune campaign"
+requires-python = ">=3.11"
+dependencies = ["numpy", "scipy"]
+
+[project.optional-dependencies]
+gpu = ["torch", "transformers", "peft", "scikit-learn"]
+test = ["pytest"]
+
+[project.scripts]
+resolve-campaign = "resolve_method.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
