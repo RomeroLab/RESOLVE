@@ -246,7 +246,7 @@ def run_campaign(*, source: str, seed: int, sequences: list[str], y: np.ndarray,
             embedded = encoder.adapt_and_embed(
                 [sequences[int(i)] for i in train_ids], targets,
                 [sequences[int(i)] for i in embed_ids],
-                epochs=1, seed=repr_seed,
+                epochs=5, seed=repr_seed,
             )
             mapping = {int(g): j for j, g in enumerate(embed_ids)}
             return scores_of(batch_local, y_fant, embedded, mapping)
